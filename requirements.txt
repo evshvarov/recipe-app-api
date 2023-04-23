@@ -1,4 +1,9 @@
 Django>=3.2.4,<3.3
 djangorestframework>=3.12.4,<3.13
 psycopg2>=2.8.6,<2.9
+django-rest-swagger>=2.2.0,<2.3
+django-cors-headers>=3.7.0,<3.8
+django-filter>=2.4.0,<2.5
+drf_spectacular>=0.26.0,<0.27
+
 
