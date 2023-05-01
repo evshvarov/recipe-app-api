@@ -19,25 +19,22 @@ services:
       # - DB_NAME=devdb
       # - DB_USER=devuser
       # - DB_PASSWORD=changeme
-      - DB_HOST=iris
+      - DB_HOST=localhost
       - DB_NAME=USER
-      - DB_USER=demo
-      - DB_PASSWORD=demo
-      - DB_PORT=1974
+      - DB_USER=_SYSTEM
+      - DB_PASSWORD=SYS
+      - DB_PORT=1972
     depends_on:
-      - iris
+      - db
 
-  iris:
-    image: intersystemsdc/iris-community
-    command: --check-caps false --ISCAgent false
-    environment:
-      - IRIS_USERNAME=demo
-      - IRIS_PASSWORD=demo
-    ports:
-      - 1974:1972
-      - 52773:52773
+  db:
+    image: postgres:13.2-alpine
     volumes:
-      - ./:/home/irisowner/irisdev
+      - dev-db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=devdb
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=changeme
 volumes:
   dev-db-data:
   dev-static-data:
