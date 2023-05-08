@@ -1,11 +1,8 @@
-Django>=3.2.4,<3.3
-djangorestframework>=3.12.4,<3.13
-# psycopg2>=2.8.6,<2.9
-django-rest-swagger>=2.2.0,<2.3
-django-cors-headers>=3.7.0,<3.8
-django-filter>=2.4.0,<2.5
-drf_spectacular>=0.26.0,<0.27
-django-iris>=0.2.1,<0.3
-# https://raw.githubusercontent.com/intersystems-community/iris-driver-distribution/main/DB-API/intersystems_irispython-3.2.0-py3-none-any.whl
-# https://github.com/intersystems-community/intersystems-irispython/releases/download/3.6.2/intersystems_iris-3.6.2-py3-none-any.whl
-
+Django
+django-probes
+djangorestframework
+django-rest-swagger
+django-cors-headers
+django-filter
+drf_spectacular
+django-iris

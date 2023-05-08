@@ -29,7 +29,7 @@ services:
 
   iris:
     image: intersystemsdc/iris-community
-    command: --check-caps false --ISCAgent false
+    # command: --check-caps false --ISCAgent false
     environment:
       - IRIS_USERNAME=demo
       - IRIS_PASSWORD=demo

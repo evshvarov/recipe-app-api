@@ -17,6 +17,7 @@ class Command(BaseCommand):
         db_up = False
         while db_up is False:
             try:
+                time.sleep(2)
                 self.check(databases=['default'])
                 db_up = True
             except Psycopg2Error:
