@@ -6,3 +6,4 @@ django-cors-headers
 django-filter
 drf_spectacular
 django-iris
+pillow
