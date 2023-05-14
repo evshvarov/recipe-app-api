@@ -2,10 +2,22 @@ from django.db import models # noqa
 
 # Create your models here.
 
+import uuid
+import os
+
 from django.conf import settings
 
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin)
+    AbstractBaseUser,
+    BaseUserManager,
+     PermissionsMixin)
+
+def recipe_image_file_path(instance, filename):
+    """Generate file path for new recipe image"""
+    ext = filename.split('.')[-1]
+    filename=f'{uuid.uuid4()}.{ext}'
+
+    return os.path.join('uploads','recipe', filename)
 
 class UserManager(BaseUserManager):
     """Manager for user profiles"""
@@ -54,6 +66,7 @@ class Recipe(models.Model):
     description = models.TextField(blank=True)
     tags=models.ManyToManyField('Tag')
     ingredients=models.ManyToManyField('Ingredient')
+    image=models.ImageField(null=True, upload_to=recipe_image_file_path)
 
     def __str__(self):
         return self.title
